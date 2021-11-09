@@ -1,1 +1,7 @@
-<p>third-step works!</p>
+<form [formGroup]="timeslotForm">
+  <select formControlName="timeslot">
+    <option *ngFor="let option of options" [value]="option">{{ option | date: 'hh:mm a' }}</option>
+  </select>
+</form>
+<br>
+<p-button (onClick)="nextPage()" [disabled]="">Next</p-button>

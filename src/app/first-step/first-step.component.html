@@ -1,1 +1,11 @@
-<p>first-step works!</p>
+<form [formGroup]="loginForm">
+  <span class="p-float-label">
+    <p-inputNumber formControlName="ssn" id="ssn" [useGrouping]="false"></p-inputNumber>
+    <label for="ssn">SocialSecurityNumber</label>
+  </span>
+    <span class="p-float-label">
+    <p-inputNumber formControlName="pin" id="pin" [useGrouping]="false"></p-inputNumber>
+    <label for="pin">Pin</label>
+  </span>
+</form>
+<p-button (onClick)="nextPage()" [disabled]="!loginForm.valid">Next</p-button>

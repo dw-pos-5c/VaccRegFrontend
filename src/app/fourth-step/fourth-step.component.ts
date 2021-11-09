@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Vaccination from '../../models/Vaccination';
+import {DataProviderService} from '../data-provider.service';
 
 @Component({
   selector: 'app-fourth-step',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FourthStepComponent implements OnInit {
 
-  constructor() { }
+  vaccination: Vaccination;
+
+  name: string;
+
+  constructor(private dataProvider: DataProviderService) { }
 
   ngOnInit(): void {
+    this.vaccination = this.dataProvider.vaccination;
+    this.name = `${this.dataProvider.registration.firstName} ${this.dataProvider.registration.lastName}`;
   }
 
 }

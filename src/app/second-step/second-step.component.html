@@ -1,1 +1,5 @@
-<p>second-step works!</p>
+<form [formGroup]="dayForm">
+  <p-calendar formControlName="date" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+</form>
+<br>
+<p-button (onClick)="nextPage()" [disabled]="!dayForm.valid">Next</p-button>
